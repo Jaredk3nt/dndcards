@@ -1,0 +1,135 @@
+.spacer {
+    margin-top: .4em;
+}
+
+@media screen and (max-width: 720px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: .85rem;
+    }
+    .card-container.small {
+        width: 200px;
+        height: 250px;
+    }
+    .rarity-banner {
+        left: 200px - (2.5em + .75em); top: -.75em;
+    }
+    .card-content {
+        padding: 50px 1em 1em;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .card-wrapper {
+        margin: 0em;
+    }
+}
+
+
+.card-container {
+    background-color: #fbf9f0;
+    width: 235px;
+    height: 340px;
+    border-radius: 8px;
+    padding: .75em;
+    margin: .5em;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    box-shadow: 2px 4px 10px rgba(0,0,0, 0.2);
+    transition: transform .2s ease;
+    font-family: sans-serif;
+    z-index: 100;
+}
+.card-container:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 3px 5px rgba(221, 199, 99, 0.822);
+}
+.card-container.small {
+    width: 13.5em - 1.2em;
+    height: 19.75em - 1.5em;
+}
+
+.card-content {
+    background: url("../data/card-background-slant.jpg");
+    background-size: cover;
+    border-radius: 8px;
+    height: 100%;
+    padding: 1em;
+    padding-top: 50%;
+    box-sizing: border-box;
+    color: #ffffff;
+    text-align: center;
+}
+.card-content > h1 {
+    margin: 0em;
+    font-size: 1.2rem;
+    margin-bottom: .55em;
+}
+.card-content > p {
+    font-size: .8rem;
+    margin: .6em 0em;
+    color: #ededed;
+}
+
+h1 {
+    font-size: 1.2rem - .1rem;
+    font-family: Karla, serif;
+}
+h3 {
+    font-size: .8rem;
+    margin-top: 2em;
+}
+p {
+    font-size: .7rem;
+    line-height: 1.1;
+    font-family: 'Noto Serif', serif;
+}
+
+.rarity-banner {
+    left: 165px; top: -.8em;
+    position: relative;
+}
+.banner-content {
+    position: absolute;
+    width: 2.5em;
+    height: 3.5em;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner-content > img {
+    width: 18px;
+    height: 18px;
+}
+
+.card-wrapper {
+    width: auto;
+    display: inline-block;
+    position: relative;
+    margin: 0em .75em .75em 0em;
+}
+
+.counter-icon {
+    position: absolute;
+    height: 3em; width: 3em;
+    border-radius: 50%;
+    margin-left: 12em;
+    background: #D3B326;
+    text-align: center;
+    padding-top: .5em;
+    top: 18.25em;
+    transition: transform .2s ease;
+    z-index: 9999;
+}
+.counter-icon > p {
+    font-family: sans-serif;
+    color: #ffffff;
+    margin-top: .95em;
+    font-weight: 700;
+}
+
