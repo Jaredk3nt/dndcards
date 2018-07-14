@@ -27,10 +27,12 @@ class IndexPage extends Component {
     const { data } = this.props;
     return (
       <div className={`card-page ${this.state.filterOpen ? 'filter-open' : ''}`} >
-        <CardList 
-          cards={data.allDataJson.edges[0].node.cardList} 
-          familiars={data.allDataJson.edges[0].node.familiars} 
-          filters={this.state.filters}/>
+        <div className="card-list-wrapper">
+          <CardList 
+            cards={data.allDataJson.edges[0].node.cardList} 
+            familiars={data.allDataJson.edges[0].node.familiars} 
+            filters={this.state.filters}/>
+        </div>
         <div 
           className={`filter-toggle ${this.state.filterOpen ? 'open' : ''}`}
           onClick={() => this.setState({ filterOpen: !this.state.filterOpen})}>

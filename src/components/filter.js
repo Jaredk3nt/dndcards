@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './filter.css';
+
 const sortTypes = ['byName', 'byId', 'byRarity'];
 const rarities = ['simple', 'special', 'heroic', 'legendary', 'mythic'];
 
@@ -12,7 +14,6 @@ class Filter extends Component {
 
     updateFilters = (filter, update) => {
         const { filters } = this.props;
-        console.log(`${filter} :: ${update}`)
         if (filters[filter] === update) {
             this.props.filterCallback({
                 ...this.props.filters,
@@ -24,7 +25,6 @@ class Filter extends Component {
                 [filter]: update
             });
         }
-        console.log(filters)
     }
 
     // Generate a callback so the filter button doesn't need to know its type
@@ -51,7 +51,9 @@ class Filter extends Component {
                                 <FilterButton 
                                     title={sort} 
                                     callback={this.updateFiltersCallback('sort')}
-                                    active={filters.sort === sort} />
+                                    active={filters.sort === sort} >
+                                    { sort }
+                                </FilterButton>
                             ))
                         }
                     </div>
@@ -64,7 +66,21 @@ class Filter extends Component {
                                 <FilterButton 
                                     title={rarity} 
                                     callback={this.updateFiltersCallback('rarity')}
-                                    active={filters.rarity === rarity} />
+                                    active={filters.rarity === rarity} >
+                                    { rarity }
+                                </FilterButton>
+                            ))
+                        }
+                    </div>
+                    <div className="filter-button-wrapper">
+                        {
+                            Array(10).fill().map((_,i) => (
+                                <FilterButton
+                                    title={i + 1}
+                                    callback={this.updateFiltersCallback('type')}
+                                    active={filters.type === i + 1}>
+                                    <img src={require(`../data/${i + 1}.svg`)}/>
+                                </FilterButton>
                             ))
                         }
                     </div>
@@ -81,8 +97,8 @@ class Filter extends Component {
     }
 }
 
-const FilterButton = ({ title, callback, active }) => (
-    <button className={`filter-button ${title}-button ${active ? 'active-filter-button' : ''}`} onClick={() => callback(title)}>{title}</button>
+const FilterButton = ({ title, callback, active, children,  }) => (
+    <button className={`filter-button ${title}-button ${active ? 'active-filter-button' : ''}`} onClick={() => callback(title)}>{ children }</button>
 );
  
 export default Filter;

@@ -1,0 +1,121 @@
+.filter-container {
+    width: 100%;
+    height: 100%;
+    background-color: #313131;
+    overflow: hidden;
+    padding: 1em 1em 2em 2em;
+  }
+  
+  .filter-container h1 {
+    color: #fff;
+  }
+  
+  .filter-section {
+    margin-bottom: 3px;
+  }
+  
+  .filter-section > p {
+    color: #bbb;
+    font-family: Karla, sans-serif;
+    font-size: .8rem;
+    margin-bottom: 8px;
+  }
+  
+  .clear-button {
+    width: 100%;
+    background-color: #da5757;
+    color: #fff;
+    padding: .75em;
+    font-size: .85rem;
+    border: none;
+    margin-top: 2em;
+  }
+  .clear-button:hover {
+    cursor: pointer;
+    background-color: #c94d4d;
+  }
+  
+  .filter-button-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 75px);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .filter-button {
+    padding: .5em .75em;
+    background-color: #fff;
+    border: none;
+    max-width: 75px;
+  }
+  
+  .filter-button:last-child {
+    margin-right: 0px;
+  }
+  
+  .filter-button:hover {
+    cursor: pointer;
+    background-color: rgb(228, 196, 55);
+    color: #313131;
+  }
+
+  .filter-button > img {
+    width: 18px; height: 18px;
+  }
+  
+  .active-filter-button {
+    outline: 2px #da5757 solid;
+    box-shadow: 0px 0px 2px 5px rgba(0,0,0,.5);
+  }
+  
+  .filter-input {
+    width: 100%;
+    border:none;
+    padding: .75em .75em .75em 1em;
+  }
+  
+  .simple-button {
+    background-color: #E8E8E8 ;
+    color: #2b2b2b;
+  }
+  .simple-button:hover {
+    background-color: rgb(206, 206, 206) ;
+    color: #2b2b2b;
+  }
+  .special-button {
+    background-color: #74C773 ;
+    color: #ffffff;
+  }
+  .special-button:hover {
+    background-color: rgb(101, 173, 100) ;
+    color: #ffffff;
+  }
+  .heroic-button {
+    background-color: #3DA4CF ;
+    color: #ffffff;
+  }
+  .heroic-button:hover {
+    background-color: rgb(52, 139, 177) ;
+    color: #ffffff;
+  }
+  .legendary-button {
+    background-color: #8C8CEA ;
+    color: #ffffff;
+  }
+  .legendary-button:hover {
+    background-color: #7c7ccf ;
+    color: #ffffff;
+  }
+  .mythic-button {
+    background-color: #85DDC9 ;
+    color: #ffffff;
+  }
+  .mythic-button:hover {
+    background-color: rgb(116, 190, 173) ;
+    color: #ffffff;
+  }
+  .familiars-button {
+    background-color: #85877C ;
+    color: #ffffff;
+  }

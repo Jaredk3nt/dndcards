@@ -1,16 +1,52 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './card.css';
 
 class Card extends Component {
-    cardClick = (e) => {
-        console.log(e.target);
+    parseDescription = (d) => {
+        return d.split("\n").map(s => (
+            <span key={s}>
+                { this.destarString(s) }
+                <br></br>
+            </span>
+        ));
+    }
+
+    destarString = (str) => {
+        let strs = [];
+        let currentStr = { isPre: false, str: "" };
+        for (let letter of str) {
+            if (letter === "`") {
+                if (currentStr.isPre) {
+                    strs.push(currentStr);
+                    currentStr = { isPre: false, str: "" };
+                } else {
+                    if (currentStr.str.length) {
+                        strs.push(currentStr);
+                        currentStr = { isPre: true, str: "" };
+                    }
+                }
+            } else {
+                currentStr.str += letter;
+            }
+        }
+        if (currentStr.str.length) {
+            strs.push(currentStr);
+        }
+        return strs.map(str => {
+            if (str.isPre) {
+                return (<pre>{str.str}</pre>);
+            } else {
+                return (<p>{str.str}</p>);
+            }
+        });
     }
 
     render() { 
-        const { isSmall, card, count } = this.props;
+        const { isSmall, card, count, cardCallback } = this.props;
         return ( 
-            <div className="card-wrapper" onClick={this.cardClick}>
+            <div className="card-wrapper" onClick={() => cardCallback(card)}>
                 <div className={`card-container ${isSmall ? 'small' : ''}`}>
                     <div className="rarity-banner">
                         <div className={`banner-content ${card.rarity}`}>
@@ -20,9 +56,7 @@ class Card extends Component {
                     <div className="card-content">
                         <h1>{ card.name.toUpperCase() }</h1>
                         {
-                            card.description.split("\n").map(s => (
-                                <p key={s}>{ s }</p>
-                            ))
+                            this.parseDescription(card.description)
                         }
                     </div>
                 </div>
@@ -37,6 +71,14 @@ class Card extends Component {
             </div> 
         )
     }
+}
+
+Card.propTypes = {
+
+}
+
+Card.defaultProps = {
+    cardCallback: () => {}
 }
  
 export default Card;

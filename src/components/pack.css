@@ -1,0 +1,33 @@
+.pack-wrapper {
+    position: absolute;
+    width: calc(100% - 3.5em);
+    height: 100vh;
+    background-color: rgba(0,0,0,.4);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.pack-container {
+    padding: 1em;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.button-container {
+    float: right;
+}
+.button {
+    width: 8em;
+    border: none;
+    height: 3em;
+    vertical-align: top;
+    margin-left: 1em;
+}
+.button:hover {
+    cursor: pointer;
+}
+.add-button {
+    background-color: #74c773;
+    color: #fff;
+}

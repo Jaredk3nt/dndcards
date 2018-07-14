@@ -1,0 +1,71 @@
+.collection-toolbar {
+    height: 4em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.collection-toolbar-header {
+    font-family: Karla, sans-serif;
+    letter-spacing: -1px;
+    font-size: 1.6rem;
+}
+.pack-button {
+    border: none;
+    background-color: #D3B326;
+    width: 10em; height: 3em;
+    color: #fff;
+}
+.pack-button:hover {
+    cursor: pointer;
+}
+
+.collection-container {
+    display: grid;
+    grid-template-columns: 18em 1fr;
+}
+
+.card-side-bar-section {
+    width: 100%;
+}
+
+.card-collection-section {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 0em 1em;
+}
+
+.card-side-bar {
+    background-color: #313131;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.search-section {
+    width: 100%;
+    background-color: #313131;
+    z-index: 9;
+    border-bottom: 2px solid #efefef;
+    padding: 1em 1.5em;
+}
+
+.search-section p {
+    color: #bbb;
+    font-family: Karla, sans-serif;
+    margin: 0px 0px 10px 0px;
+}
+
+.search-section input {
+    width: 100%;
+    border:none;
+    padding: .75em .75em .75em 1em;
+}
+
+.card-list-section {
+    padding-left: 1em;
+    overflow-y: scroll;
+    padding-top: 1em;
+    height: calc(100% - 5em);
+}

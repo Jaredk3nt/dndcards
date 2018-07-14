@@ -2,54 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
 import Card from './card';
+import { cardFilter, cardSort } from '../utils';
 
 class CardList extends Component {
-
-    cardFilter = (card) => {
-        const { filters } = this.props;
-        let filtered = false
-        if (filters.rarity) {
-            if (filters.rarity !== card.rarity) filtered = true;
-        }
-        if (filters.type) {
-            if (!card.type.includes(filters.type)) filtered = true;
-        }
-        if (filters.search) {
-            let searchableText = card.name.toLowerCase() + card.description.toLowerCase();
-            if (!(searchableText.includes(filters.search.toLowerCase()))) filtered = true;
-        }
-        return !filtered;
-    }
-
-    cardSort = () => {
-        const { sort } = this.props.filters;
-        
-
-        switch (sort){
-            case 'byName':
-                return (a, b) => {
-                    if (a.name < b.name) return -1;
-                    if (a.name > b.name) return 1;
-                    return 0;
-                }
-            case 'byId':
-                return (a, b) => a.id - b.id;
-            case 'byRarity':
-                const rarities = ['simple', 'special', 'heroic', 'legendary', 'mythic'];
-                return (a, b) => {
-                    return rarities.indexOf(a.rarity) - rarities.indexOf(b.rarity);
-                }
-        }
-    }
-
     render() {
-        const { cards, filters } = this.props;
-        const sortFn = this.cardSort();
+        const { cards, filters, cardCallback } = this.props;
         return (
             <div className="card-list">
+                { !cards.length && <h2>Oops... There are no cards here!</h2> }
                 {
-                    cards.filter(this.cardFilter).sort(sortFn).map(card => (
-                        <Card card={card} count={0} />
+                    cards.filter(cardFilter(filters)).sort(cardSort(filters.sort)).map(card => (
+                        <Card card={card} count={card.count} cardCallback={cardCallback} />
                     ))
                 }
             </div>

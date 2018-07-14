@@ -2,6 +2,11 @@
     margin-top: .4em;
 }
 
+pre {
+    display: inline;
+    color: #e6c430;
+}
+
 @media screen and (max-width: 720px) {
     h1 {
         font-size: 1.2rem;
@@ -68,10 +73,18 @@
     font-size: 1.2rem;
     margin-bottom: .55em;
 }
-.card-content > p {
+.card-content > p, .card-content > span > p {
     font-size: .8rem;
     margin: .6em 0em;
     color: #ededed;
+    line-height: 1.1;
+    font-family: 'Noto Serif', serif;
+    display: inline;
+}
+
+br {
+    display: block;
+    height: 3px;
 }
 
 h1 {
@@ -81,11 +94,6 @@ h1 {
 h3 {
     font-size: .8rem;
     margin-top: 2em;
-}
-p {
-    font-size: .7rem;
-    line-height: 1.1;
-    font-family: 'Noto Serif', serif;
 }
 
 .rarity-banner {
@@ -118,18 +126,18 @@ p {
     position: absolute;
     height: 3em; width: 3em;
     border-radius: 50%;
-    margin-left: 12em;
+    margin-left: 210px;
     background: #D3B326;
     text-align: center;
-    padding-top: .5em;
-    top: 18.25em;
+    padding-top: .85em;
+    top: 310px;
     transition: transform .2s ease;
-    z-index: 9999;
+    z-index: 999;
 }
 .counter-icon > p {
     font-family: sans-serif;
     color: #ffffff;
-    margin-top: .95em;
     font-weight: 700;
+    font-size: 16px;
 }
 
