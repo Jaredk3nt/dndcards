@@ -7,10 +7,10 @@ import { gatherArrayFromEdges } from '../utils';
 import openSVG from '../data/open.svg';
 import closeSVG from '../data/close.svg';
 
-class IndexPage extends Component {
+class FamiliarPage extends Component {
   constructor(props) {
     super(props);
-    const cardList = gatherArrayFromEdges(this.props.data.allDataJson.edges, "cardList");
+    const cardList = gatherArrayFromEdges(this.props.data.allDataJson.edges, "familiars");
     this.state = {
       filters: {
         sort: 'byRarity',
@@ -50,29 +50,22 @@ class IndexPage extends Component {
   };
 }
 
-export default IndexPage;
+export default FamiliarPage;
 
 export const query = graphql`
-  query cardQuery {
-    allDataJson {
-      edges {
-        node {
-          familiars {
-            id
-            name
-            rarity
-            description
-            type
-          } 
-          cardList {
-            id
-            name
-            rarity
-            description
-            type
-          }
+    query familiarQuery {
+        allDataJson {
+            edges {
+                node {
+                    familiars {
+                        id
+                        name
+                        rarity
+                        description
+                        type
+                    } 
+                }
+            }
         }
-      }
     }
-  }
 `

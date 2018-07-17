@@ -48,8 +48,19 @@ const cardIndexInList = (card, list) => {
     return -1;
 }
 
+const gatherArrayFromEdges = (edges, arrName) => {
+    let result = [];
+    edges.forEach(edge => {
+        if (edge.node[arrName]) {
+            result = result.concat(edge.node[arrName]);
+        }
+    });
+    return result;
+}
+
 module.exports = {
     cardFilter,
     cardSort,
-    cardIndexInList
+    cardIndexInList,
+    gatherArrayFromEdges
 }

@@ -1,0 +1,32 @@
+{
+    "shopkeepers": [
+        {
+            "name": "Burned Barrel Bartender",
+            "city": "Imidri",
+            "packs": {
+                "quantity": 10,
+                "price": 5
+            },
+            "cards": [
+                33,
+                39,
+                54,
+                58,
+                68,
+                100
+            ]
+        },
+        {
+            "name": "Imidri Underground Mages",
+            "city": "Imidri",
+            "cards": [
+                57,
+                74,
+                78,
+                87,
+                93,
+                102
+            ]
+        }
+    ]
+}

@@ -51,7 +51,8 @@ class Filter extends Component {
                                 <FilterButton 
                                     title={sort} 
                                     callback={this.updateFiltersCallback('sort')}
-                                    active={filters.sort === sort} >
+                                    active={filters.sort === sort} 
+                                    key={sort}>
                                     { sort }
                                 </FilterButton>
                             ))
@@ -66,7 +67,8 @@ class Filter extends Component {
                                 <FilterButton 
                                     title={rarity} 
                                     callback={this.updateFiltersCallback('rarity')}
-                                    active={filters.rarity === rarity} >
+                                    active={filters.rarity === rarity} 
+                                    key={rarity}>
                                     { rarity }
                                 </FilterButton>
                             ))
@@ -78,7 +80,8 @@ class Filter extends Component {
                                 <FilterButton
                                     title={i + 1}
                                     callback={this.updateFiltersCallback('type')}
-                                    active={filters.type === i + 1}>
+                                    active={filters.type === i + 1}
+                                    key={i}>
                                     <img src={require(`../data/${i + 1}.svg`)}/>
                                 </FilterButton>
                             ))

@@ -12,7 +12,7 @@ class CardList extends Component {
                 { !cards.length && <h2>Oops... There are no cards here!</h2> }
                 {
                     cards.filter(cardFilter(filters)).sort(cardSort(filters.sort)).map(card => (
-                        <Card card={card} count={card.count} cardCallback={cardCallback} />
+                        <Card card={card} count={card.count} cardCallback={cardCallback} key={card.id} />
                     ))
                 }
             </div>

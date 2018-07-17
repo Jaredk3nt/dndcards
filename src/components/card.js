@@ -36,9 +36,9 @@ class Card extends Component {
         }
         return strs.map(str => {
             if (str.isPre) {
-                return (<pre>{str.str}</pre>);
+                return (<pre key={str.str}>{str.str}</pre>);
             } else {
-                return (<p>{str.str}</p>);
+                return (<p key={str.str}>{str.str}</p>);
             }
         });
     }

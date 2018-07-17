@@ -702,7 +702,7 @@
         },
         {
             "name": "Ironclad",
-            "description": "Become resistant to non-magical physical attacks\nLasts until you have taken `((lv / 5)*5)%` of your max health",
+            "description": "Become resistant to non-magical physical attacks\nLasts until you have taken `((lv/5)*5)%` of your max health",
             "rarity": "special",
             "id": 5,
             "type": [6]
@@ -712,16 +712,43 @@
             "description": "Gain `(lv/5)` to all intimidation based rolls for 12 hours",
             "rarity": "special",
             "id": 5,
-            "type": [6]
+            "type": [7, 6]
         },
         {
             "name": "Bloodletting",
-            "description": "Reduce max health by `10%` gain +1 in a stat of your choosing\nReverts after dropping to 0 health or 12 hours",
+            "description": "Reduce health by `10%` of your max health, gain `+1` in a stat of your choosing\nReverts after dropping to 0 health or 12 hours",
             "rarity": "special",
             "id": 5,
             "type": [8]
+        },
+        {
+            "name": "Spirit Walk",
+            "description": "Your spirit leaves your body, you can move around the world without interacting with it for `(lv/4)`min",
+            "rarity": "heroic",
+            "id": 5,
+            "type": [9]
+        },
+        {
+            "name": "Spirit Walk",
+            "description": "Your spirit leaves your body, you can move around the world without interacting with it for `(lv/4)`min",
+            "rarity": "heroic",
+            "id": 5,
+            "type": [9]
+        },
+        {
+            "name": "Flex",
+            "description": "Make a normal melee attack this turn, add `(lv / 5)` to your attack roll",
+            "rarity": "simple",
+            "id": 5,
+            "type": [7]
+        },
+        {
+            "name": "Brace for Impact",
+            "description": "Reduce falling speed of a target within 30ft by half",
+            "rarity": "simple",
+            "id": 5,
+            "type": [2, 9]
         }
-        
     ],
     "familiars": [
         {
@@ -733,7 +760,7 @@
         },
         {
             "name": "Spirit Animal",
-            "description": "1hp\n Form animal of your choosing that can't attack",
+            "description": "1hp\n Form an animal of your choosing that can't attack",
             "rarity": "simple",
             "id": 2,
             "type": [4]
@@ -746,85 +773,92 @@
             "type": [4]
         },
         {
+            "name": "Thieving Tom",
+            "description": "1hp\nCan steal a small object from a target unless they make a `DC15` WIS save\nDisappears after success",
+            "rarity": "simple",
+            "id": 2,
+            "type": [4]
+        },
+        {
             "name": "Dire Wolf",
-            "description": "10 hp, AC 11\nBite: 1d4 + 2 piercing damage",
+            "description": "10hp, 11ac\nBite: `1d4+2` piercing damage",
             "rarity": "special",
             "id": 4,
             "type": [4]
         },
         {
             "name": "Animated Armor",
-            "description": "20 hp, AC 15\nCan't attack",
+            "description": "20hp, 15ac\nCan't attack",
             "rarity": "special",
             "id": 5,
             "type": [4]
         },
         {
             "name": "Hugger",
-            "description": "12hp, AC 11\nSummon a void creature that can grapple targets until they make a STR save of 15+",
+            "description": "12hp, 11ac\nSummon a void creature that can grapple targets until they make a `DC15` STR save",
             "rarity": "special",
             "id": 5,
             "type": [4]
         },
         {
             "name": "Varactyl",
-            "description": "Large four legged lizard mount\n60 ft movement",
+            "description": "Large four legged lizard mount\n60ft movement",
             "rarity": "special",
             "id": 5,
             "type": [4]
         },
         {
             "name": "Healing Fairy",
-            "description": "6hp, AC 11\nHeal caster 1d4 + 2 each turn",
+            "description": "6hp, 11ac\nHeal caster `1d4` each turn",
             "rarity": "special",
             "id": 5,
             "type": [4]
         },
         {
             "name": "Mist Goblin",
-            "description": "18 hp, 13 AC\n Dagger: 1d4 + 5 multiattack\n Can cast Mist Form once every 1 min",
+            "description": "18hp, 13ac\n Dagger: `1d4+5` multiattack\n Can cast Mist Form once every 1 min",
             "rarity": "heroic",
             "id": 3,
             "type": [4]
         },
         {
             "name": "Blight Centaur",
-            "description": "32 hp, 12 AC\n Pike: 1d10 + 4\n Longbow: 1d8 + 4 (150/600)",
+            "description": "32hp, 12ac\n Pike: `1d10+4`\n Longbow: `1d8+4` (150/600)",
             "rarity": "heroic",
             "id": 3,
             "type": [4]
         },
         {
             "name": "Acultist",
-            "description": "36 hp, 13 AC\nHeal target for 1d10 + 2 at the cost of 4 hp",
+            "description": "36hp, 13 AC\nHeal target for `1d10+2` at the cost of 4 hp",
             "rarity": "heroic",
             "id": 3,
             "type": [4]
         },
         {
             "name": "Royal Procession",
-            "description": "Carriage mount that can hold up to 5 people\n60 ft movement",
+            "description": "Carriage mount that can hold up to 5 people\n60ft movement",
             "rarity": "heroic",
             "id": 3,
             "type": [4]
         },
         {
             "name": "Pegasus",
-            "description": "80 hp\n Has flight with movement speed of 100 ft",
+            "description": "50hp\n Has flight with movement speed of 100ft",
             "rarity": "legendary",
             "id": 5,
             "type": [4]
         },
         {
             "name": "Chain Devil",
-            "description": "60 hp, 16 AC\n Chain: 2d6 + 4 slashing damage that grapples target dealing 1d6 + 4 damage until free",
+            "description": "60hp, 16ac\n Chain: `2d6+4` slashing damage that grapples target dealing `1d6+4` damage until they make `DC16` STR save",
             "rarity": "legendary",
             "id": 5,
             "type": [4]
         },
         {
             "name": "Angelic Watcher",
-            "description": "48 hp, 13 AC\n Divine Touch: Heal target to full health (10 min cooldown)\nHoly Aura: Heal all allies within 50 ft 2d6 + 4",
+            "description": "32hp, 13ac\n Divine Touch: Heal target to full health (10 min cooldown)\nHoly Aura: Heal all allies within 50ft `2d6+4`",
             "rarity": "legendary",
             "id": 5,
             "type": [4]

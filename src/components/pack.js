@@ -28,7 +28,6 @@ class Pack extends Component {
         this.props.cardList.forEach(card => {
             crl[card.rarity].push(card);
         });
-        console.log(crl);
         return crl;
     }
 

@@ -3,17 +3,19 @@ import CardList from '../components/cardList';
 import CardSideBar from '../components/cardSideBar';
 import Pack from '../components/pack';
 
-import { cardIndexInList } from '../utils';
+import { cardIndexInList, gatherArrayFromEdges } from '../utils';
 
 import '../components/collection.css';
 
 class Collection extends Component {
     constructor(props) {
         super(props);
+        const cardList = gatherArrayFromEdges(this.props.data.allDataJson.edges, "cardList");
         this.state = {
             collection: [],
             filters: {},
-            packOpen: false
+            packOpen: false,
+            cardList
         }
     }
 
@@ -70,9 +72,7 @@ class Collection extends Component {
     }
 
     render() { 
-        const { collection, filters, packOpen } = this.state;
-        const { cardList } = this.props.data.allDataJson.edges[0].node;
-        console.log(packOpen);
+        const { collection, filters, packOpen, cardList } = this.state;
         return ( 
             <div className="collection-container">
                 { packOpen && <Pack cardList={cardList} onAdd={this.addPack} onClose={this.togglePack} /> }

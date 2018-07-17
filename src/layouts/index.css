@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Karla, sans-serif;
+  background-color: #eee;
 }
 
 .layout-grid {
@@ -99,4 +100,45 @@ body {
 .filter-toggle > img {
   width: 20px;
   height: 20px;
+}
+
+
+.shopkeeper-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.shopkeep-card {
+  width: 12em;
+  height: 12em;
+  background-color: #313131;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1em;
+  padding: 1em;
+  transition: transform ease .25s;
+}
+.shopkeep-card:hover {
+  box-shadow: 0px 4px 5px rgba(0,0,0,0.55);
+  transform: translateY(-4px);
+}
+
+.shopkeep-card-text > h3 {
+  font-size: .95rem;
+  color: #aaa;
+  margin: 0px;
+}
+
+.shopkeep-card-text > h1 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin: .25em 0em;
 }
