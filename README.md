@@ -1,26 +1,7 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# D&D Cards
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+This website supports the ability to play a superset of Dungeons & Dragons using card game mechanics in place of magic and spells. The site has a filterable list of all of the cards currently avaliable in the set as well as a collection page that allows you to collect and use cards from your campaign. Card collections are stored locally in your browser so you don't have to worry about losing that rare card between sessions!
 
-## Install
-
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
-```
-
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
-
-Then you can run it by:
-```sh
-cd gatsby-example-site
-gatsby develop
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+<img src="./example-images/main.png" style="text-align: center; max-width: 500px;"/>
+<img src="./example-images/collection.png" style="text-align: center; max-width: 500px;"/>
+<img src="./example-images/shopkeeper.png" style="text-align: center; max-width: 500px;"/>
