@@ -5,6 +5,7 @@ import './header.css';
 import CollectionSVG from '../data/collection.svg';
 import FamiliarSVG from '../data/familiar.svg';
 import ShopkeeperSVG from '../data/shopkeeper.svg';
+import AllcardsSVG from '../data/allcards.svg';
 
 const Header = ({ siteTitle }) => (
   <div className="header-container">
@@ -15,6 +16,9 @@ const Header = ({ siteTitle }) => (
       <div className="icon-box four"></div>
     </Link>
     <div className="nav-links">
+      <Link to="/allcards">
+        <img src={AllcardsSVG} />
+      </Link>
       <Link to="/familiars">
         <img src={FamiliarSVG} />
       </Link>
